@@ -37,19 +37,51 @@ public class ProductRawMaterialController : ControllerBase
         return ViewFactory.ProductRawMaterial(rawMaterial);
     }
 
+    // PUT: api/ProductRawMaterial/5/5
+    [HttpPut]
+    public async Task<IActionResult> PutProductRawMaterial(ProductRawMaterialDto dto)
+    {
+        var rawMaterial = await _context.ProductRawMaterial.FindAsync(
+            dto.productID, dto.rawMaterialID);
+        if (rawMaterial is null)
+        {
+            return NotFound();
+        }
+
+        rawMaterial.Units = dto.units;
+
+        _context.Entry(rawMaterial).State = EntityState.Modified;
+
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!ProductRawMaterialExists(dto.productID, dto.rawMaterialID))
+            {
+                return NotFound();
+            }
+            return Conflict();
+        }
+
+        return NoContent();
+    }
+
     // POST: api/ProductRawMaterial
     [HttpPost]
     public async Task<ActionResult<ProductRawMaterialView>> PostProductRawMaterial(
         ProductRawMaterialDto dto)
     {
-        var product = await _context.Product.FindAsync(dto.productID);
-        if (product is null)
+        var productExists = await _context.Product.AnyAsync(p => p.ID == dto.productID);
+        if (!productExists)
         {
             return NotFound("Product not found.");
         }
 
-        var rawMaterial = await _context.RawMaterial.FindAsync(dto.rawMaterialID);
-        if (rawMaterial is null)
+        var rawMaterialExists = await _context.RawMaterial.AnyAsync(
+            r => r.ID == dto.rawMaterialID);
+        if (!rawMaterialExists)
         {
             return NotFound("Raw material not found.");
         }
@@ -90,6 +122,12 @@ public class ProductRawMaterialController : ControllerBase
         await _context.SaveChangesAsync();
 
         return NoContent();
+    }
+
+    private bool ProductRawMaterialExists(int productID, int rawMaterialID)
+    {
+        return _context.ProductRawMaterial.Any(
+            p => p.ProductID == productID && p.RawMaterialID == rawMaterialID);
     }
 }
 

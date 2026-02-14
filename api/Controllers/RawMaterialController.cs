@@ -1,4 +1,3 @@
-using App.Controllers.ResponseMessages;
 using App.Data;
 using App.Models;
 using App.StaticTools;
@@ -82,7 +81,7 @@ public class RawMaterialController : ControllerBase
             {
                 return NotFound();
             }
-            return Conflict(MessageRepo.UpdateConflict);
+            return Conflict();
         }
 
         return NoContent();

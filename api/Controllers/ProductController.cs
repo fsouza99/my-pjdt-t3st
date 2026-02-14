@@ -1,4 +1,3 @@
-using App.Controllers.ResponseMessages;
 using App.Data;
 using App.Models;
 using App.StaticTools;
@@ -44,6 +43,42 @@ public class ProductController : ControllerBase
         return result;
     }
 
+    // GET: api/Product/Projections
+    [HttpGet("Projections")]
+    public async Task<ActionResult<IEnumerable<ProductProfitProjectionView>>> GetProductionProjections()
+    {
+        var result = new List<ProductProfitProjectionView>();
+        var products = await _context.Product
+            .Include(p => p.ProductRawMaterials)
+            .ThenInclude(p => p.RawMaterial)
+            .ToListAsync();
+        foreach (var product in products)
+        {
+            if (product.ProductRawMaterials.Count == 0)
+            {
+                continue;
+            }
+            uint maxFeaseableUnits = uint.MaxValue;
+            foreach (var prm in product.ProductRawMaterials)
+            {
+                uint localMaxFeasableUnits = prm.RawMaterial.Units / prm.Units;
+                if (maxFeaseableUnits > localMaxFeasableUnits)
+                {
+                    maxFeaseableUnits = localMaxFeasableUnits;
+                }
+            }
+            decimal totalValue = product.Value * maxFeaseableUnits;
+            result.Add(new ProductProfitProjectionView(
+                product.ID,
+                product.Name,
+                maxFeaseableUnits,
+                product.Value,
+                totalValue));
+        }
+        result.Sort((r1, r2) => r2.totalValue.CompareTo(r1.totalValue));
+        return result;
+    }
+
     // GET: api/Product/5
     [HttpGet("{id}")]
     public async Task<ActionResult<ProductView>> GetProduct(int id)
@@ -85,7 +120,7 @@ public class ProductController : ControllerBase
             {
                 return NotFound();
             }
-            return Conflict(MessageRepo.UpdateConflict);
+            return Conflict();
         }
 
         return NoContent();
