@@ -1,0 +1,52 @@
+[
+    {
+        "ID": 1,
+        "Name": "Wood",
+        "Units": 10
+    },
+    {
+        "ID": 2,
+        "Name": "Water",
+        "Units": 15
+    },
+    {
+        "ID": 3,
+        "Name": "Steel",
+        "Units": 20
+    },
+    {
+        "ID": 4,
+        "Name": "Rub",
+        "Units": 30
+    },
+    {
+        "ID": 5,
+        "Name": "Alcohol",
+        "Units": 50
+    },
+    {
+        "ID": 6,
+        "Name": "Iron",
+        "Units": 50
+    },
+    {
+        "ID": 7,
+        "Name": "Gold",
+        "Units": 30
+    },
+    {
+        "ID": 8,
+        "Name": "Silver",
+        "Units": 75
+    },
+    {
+        "ID": 9,
+        "Name": "Brass",
+        "Units": 150
+    },
+    {
+        "ID": 10,
+        "Name": "Copper",
+        "Units": 250
+    }
+]
