@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@property --site-first-color {
+  inherits: false;
+  initial-value: #142461;
+  syntax: "<color>";
+}
+
+@property --site-second-color {
+  inherits: false;
+  initial-value: #dbdbba;
+  syntax: "<color>";
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    margin-bottom: 10rem;
+}
+
+a { text-decoration: none; }
+
+footer {
+    bottom: 0;
+    font-size: 11pt;
+    position: absolute;
+    width: 100%;
+
+    span {
+        display: none;
+        margin-left: .5rem;
+        color: grey;
+    }
+
+    a { margin-left: .5rem; }
+
+    @media (min-width: 520px) {
+        span { display: inline; }
+    }
+}
+
+main { min-height: 80vh; }
+
+.light-table {
+    table { overflow-x: auto; }
+
+    thead {
+        background-color: white;
+        text-align: center;
+    }
+
+    th {
+        color: gray;
+        font-size: 10pt;
+        font-weight: 300;
+        letter-spacing: 1pt;
+        padding: 0.5rem 2rem;
+    }
+
+    tr:nth-child(even) { background-color: white; }
+
+    td { padding: 1rem; }
+}
+
+.bg-1 {
+    background-color: var(--site-first-color);
+}
+
+.bg-2 {
+    background-color: var(--site-second-color);
+}
+
+.text-bg-1 {
+    background-color: var(--site-first-color);
+    color: white;
+}
+
+.site-btn {
+    align-items: center;
+    background-color: var(--site-second-color);
+    border-radius: 1rem;
+    border-style: none;
+    color: rgb(45, 45, 45);
+    display: inline-flex;
+    font-size: 11pt;
+    font-weight: 400;
+    height: 2.5rem;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 6rem;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, .35) 0px 5px 10px;
+        transition-duration: .4s;
+    }
+}
+
+/* Size classes */
+
+.h-fit {
+    height: fit-content;
+}
+
+.h-3rem {
+    height: 3rem;
+}
+
+.h-18rem {
+    height: 18rem;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.w-3rem {
+    width: 3rem;
+}
+
+.w-5rem {
+    width: 5rem;
+}
+
+.w-6rem {
+    width: 6rem;
+}
+
+.w-8rem {
+    width: 8rem;
+}
+
+.w-10rem {
+    width: 10rem;
+}
+
+.w-18rem {
+    width: 18rem;
+}
+
+.w-25rem {
+    width: 25rem;
+}
+
+.w-30rem {
+    width: 30rem;
+}
+
+.w-40rem {
+    width: 40rem;
+}
+
+.max-w-10rem {
+    max-width: 10rem;
+}
+
+.max-w-15rem {
+    max-width: 15rem;
+}
+
+.max-w-18rem {
+    max-width: 18rem;
+}
+
+.max-w-20rem {
+    max-width: 20rem;
+}
+
+.max-w-40rem {
+    max-width: 40rem;
+}
+
+.max-w-50rem {
+    max-width: 50rem;
+}
+
+.max-w-60rem {
+    max-width: 60rem;
+}
+
+.max-w-90 {
+    max-width: 90%;
+}
+
+.max-w-100 {
+    max-width: 100%;
+}
+
+.no-deco {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.br-100 {
+    border-radius: 100%;
+}
+

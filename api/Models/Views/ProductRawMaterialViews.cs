@@ -1,11 +1,11 @@
 namespace App.Models;
 
 public record ProductRawMaterialView(
-    int productID,
-    int rawMaterialID,
+    int prId,
+    int rmId,
     uint units);
 
 public record ProductNamedRawMaterialView(
-    int rawMaterialID,
-    string rawMaterialName,
+    int id,
+    string name,
     uint units);
