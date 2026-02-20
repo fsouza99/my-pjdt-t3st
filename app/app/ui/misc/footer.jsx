@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="fw-bold fs-5 mt-2 text-warning">Ferramentas</p>
           <p className="m-0">Next.js · React · Bootstrap</p>
           <p className="m-0">ASP.NET Core · C# · EF Core</p>
-          <p className="m-0">SQL · SQLite</p>
+          <p className="m-0">SQL · MySQL · SQLite</p>
         </div>
         <div className="col-md-3">
           <p className="fw-bold fs-5 mt-2 text-warning">Contato</p>

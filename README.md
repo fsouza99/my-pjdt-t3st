@@ -15,14 +15,40 @@ Todos os requisitos foram cumpridos.
 
 ## Execução
 
-Execute a API (opções inseridas logo após):
+### API
+
+Execute a API na pasta associada com:
 
 ```bash
 dotnet run
 ```
 
-E o frontend:
+Você pode utilizar as opções de execução para SQLite e Swagger:
+
+```bash
+dotnet run --sqlite --swagger
+```
+
+Pode ser preciso instalar as dependências primeiro:
+
+```bash
+dotnet restore
+```
+
+**Requer .NET 9**.
+
+### APP
+
+Execute o aplicativo do website na pasta associada com:
 
 ```bash
 pnpm run dev
 ```
+
+Pode ser preciso instalar as dependências primeiro:
+
+```bash
+pnpm install
+```
+
+**Requer Node.js**.
