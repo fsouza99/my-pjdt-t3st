@@ -23,7 +23,7 @@ export async function createProductAction(formState: object, formData: object
     redirect(`/products/${data.id}`);
   }
 
-  return { data: form, formError: ResponseMessages.DefaultError };
+  return { formError: ResponseMessages.DefaultError };
 }
 
 

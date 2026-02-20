@@ -16,17 +16,22 @@ export async function createProductRawMaterialAction(
   formState: object, formData: object): object {
   const form = Object.fromEntries(formData.entries());
   const dto = {
-    productId: form.productId,
-    rawMaterialId: form.rawMaterialId,
+    productID: form.pid,
+    rawMaterialID: form.rid,
     units: form.units
   };
 
   const response = await createProductRawMaterial(dto);
   if (response.ok) {
-    redirect(`/products/${dto.productId}`);
+    redirect(`/products/${dto.productID}/materials`);
   }
 
-  return { data: form, formError: ResponseMessages.DefaultError };
+  const text = await response.text();
+  if (text.includes('UNIQUE')) {
+    return { formError: ResponseMessages.UniqueConstError };  
+  }
+
+  return { formError: ResponseMessages.DefaultError };
 }
 
 
@@ -34,14 +39,14 @@ export async function updateProductRawMaterialAction(
   formState: object, formData: object): object {
   const form = Object.fromEntries(formData.entries());
   const dto = {
-    productId: form.productId,
-    rawMaterialId: form.rawMaterialId,
+    productID: form.pid,
+    rawMaterialID: form.rid,
     units: form.units
   };
 
   const response = await updateProductRawMaterial(dto);
   if (response.ok) {
-    revalidatePath(`/products/${form.productId}/edit`);
+    revalidatePath(`/products/${dto.productID}/materials/${dto.rawMaterialID}`);
     return { success: ResponseMessages.ChangeSuccess };
   }
 
@@ -53,10 +58,9 @@ export async function deleteProductRawMaterialAction(
   formState: object, formData: object): object {
   const form = Object.fromEntries(formData.entries());
 
-  const response = await removeProductRawMaterial(
-    form.productId, form.rawMaterialId);
+  const response = await removeProductRawMaterial(form.pid, form.rid);
   if (response.ok) {
-    return { success: ResponseMessages.DeleteSuccess };
+    redirect(`/products/${form.pid}/materials`);
   }
 
   return { formError: ResponseMessages.DefaultError };

@@ -32,14 +32,16 @@ export default function EditProductForm({ product }) {
       <h1 className="text-center my-4 fs-3">
         Produto<span className="text-secondary"> ∙ {product.id}</span>
       </h1>
-      <form id="upForm" action={upFormAction} className="w-18rem mx-auto" >
+      <form id="upForm" action={upFormAction} className="w-30rem max-w-90 mx-auto" >
         <ProductInputs product={product} />
       </form>
       <form id="delForm" action={delFormAction} hidden>
         <input name="id" defaultValue={product.id} />
       </form>
       <div className="mt-4 text-center">
-        <Link href={`/products/${product.id}/materials`}>Ver materiais</Link>
+        <Link href={`/products/${product.id}/materials`}>
+          Ver materiais do produto
+        </Link>
         <div className="my-4" />
         <PendingButton
           className="me-1 btn btn-success"

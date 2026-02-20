@@ -6,8 +6,7 @@ namespace App.StaticTools.Extensions;
 public static class DatabaseWorkloads
 {
     // Initializes the database by creating the models and adding placeholder data.
-    public static async Task InitializeDatabaseAsync(
-        this WebApplication app, bool useSqlite)
+    public static async Task InitializeDatabaseAsync(this WebApplication app)
     {
         using (var scope = app.Services.CreateScope())
         {

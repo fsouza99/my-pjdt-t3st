@@ -2,7 +2,7 @@ import { UrlMap } from '@/app/lib/data/urls';
 
 
 // Number of elements per page for every data model.
-export const PageSizes = { product: 20, rawMaterial: 20 };
+export const PageSizes = { product: 10, rawMaterial: 10 };
 
 
 // Add query parameters to base URL.

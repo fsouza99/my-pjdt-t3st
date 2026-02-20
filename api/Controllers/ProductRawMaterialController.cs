@@ -107,12 +107,12 @@ public class ProductRawMaterialController : ControllerBase
     }
 
     // DELETE: api/ProductRawMaterial/5/5
-    [HttpDelete("{tagId}/{articleId}")]
+    [HttpDelete("{productId}/{rawMaterialId}")]
     public async Task<IActionResult> DeleteProductRawMaterial(
-        int productID, int rawMaterialID)
+        int productId, int rawMaterialId)
     {
         var rawMaterial = await _context.ProductRawMaterial.FindAsync(
-            productID, rawMaterialID);
+            productId, rawMaterialId);
         if (rawMaterial is null)
         {
             return NotFound();

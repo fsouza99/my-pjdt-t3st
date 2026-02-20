@@ -1,52 +1,107 @@
 [
     {
         "ID": 1,
-        "Name": "Wood",
+        "Name": "Madeira",
         "Units": 10
     },
     {
         "ID": 2,
-        "Name": "Water",
+        "Name": "Água",
         "Units": 15
     },
     {
         "ID": 3,
-        "Name": "Steel",
+        "Name": "Aço",
         "Units": 20
     },
     {
         "ID": 4,
-        "Name": "Rub",
+        "Name": "Borracha",
         "Units": 30
     },
     {
         "ID": 5,
-        "Name": "Alcohol",
+        "Name": "Álcool",
         "Units": 50
     },
     {
         "ID": 6,
-        "Name": "Iron",
+        "Name": "Ferro",
         "Units": 50
     },
     {
         "ID": 7,
-        "Name": "Gold",
+        "Name": "Ouro",
         "Units": 30
     },
     {
         "ID": 8,
-        "Name": "Silver",
+        "Name": "Prata",
         "Units": 75
     },
     {
         "ID": 9,
-        "Name": "Brass",
+        "Name": "Bronze",
         "Units": 150
     },
     {
         "ID": 10,
-        "Name": "Copper",
+        "Name": "Cobre",
         "Units": 250
+    },
+    {
+        "ID": 11,
+        "Name": "Vidro",
+        "Units": 250
+    },
+    {
+        "ID": 12,
+        "Name": "Gás",
+        "Units": 250
+    },
+    {
+        "ID": 13,
+        "Name": "Carvão",
+        "Units": 300
+    },
+    {
+        "ID": 14,
+        "Name": "Areia",
+        "Units": 350
+    },
+    {
+        "ID": 15,
+        "Name": "Sal",
+        "Units": 150
+    },
+    {
+        "ID": 16,
+        "Name": "Argila",
+        "Units": 50
+    },
+    {
+        "ID": 17,
+        "Name": "Alumínio",
+        "Units": 50
+    },
+    {
+        "ID": 18,
+        "Name": "Algodão",
+        "Units": 50
+    },
+    {
+        "ID": 19,
+        "Name": "Açúcar",
+        "Units": 50
+    },
+    {
+        "ID": 20,
+        "Name": "Farinha",
+        "Units": 150
+    },
+    {
+        "ID": 21,
+        "Name": "Levedo",
+        "Units": 200
     }
 ]

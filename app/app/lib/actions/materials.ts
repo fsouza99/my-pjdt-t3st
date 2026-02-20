@@ -23,7 +23,7 @@ export async function createRawMaterialAction(
     redirect(`/materials/${data.id}`);
   }
 
-  return { data: form, formError: ResponseMessages.DefaultError };
+  return { formError: ResponseMessages.DefaultError };
 }
 
 

@@ -20,6 +20,7 @@ export default function ProductInputs({ product }) {
         className="form-control"
         id="nameInput"
         name="name"
+        maxLength="32"
         placeholder="Ferro"
         type="text"
         required

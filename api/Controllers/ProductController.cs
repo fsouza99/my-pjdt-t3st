@@ -75,8 +75,7 @@ public class ProductController : ControllerBase
                 product.Value,
                 totalValue));
         }
-        result.Sort((r1, r2) => r2.totalValue.CompareTo(r1.totalValue));
-        return result;
+        return result.Take(10).OrderByDescending(r => r.totalValue).ToList();
     }
 
     // GET: api/Product/5

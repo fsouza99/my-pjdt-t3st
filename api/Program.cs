@@ -7,12 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-bool useSqlite = args.Contains("--sqlite");
 bool useSwagger = args.Contains("--swagger");
 
 builder.Services.AddControllers();
 
-builder.Services.AddAppDbContext(builder.Configuration, useSqlite);
+builder.Services.AddAppDbContext(builder.Configuration);
 
 if (useSwagger)
 {
@@ -28,7 +27,7 @@ if (app.Environment.IsDevelopment() && useSwagger)
     app.UseSwaggerUI();
 }
 
-await app.InitializeDatabaseAsync(useSqlite);
+await app.InitializeDatabaseAsync();
 
 app.MapControllers();
 

@@ -43,11 +43,9 @@ export default async function ProductsPage(props) {
             objCount > 0 ?
               products.map((p) => (
                 <tr key={p.id}>
-                  <td className="w-10rem">{p.id}</td>
-                  <td className="w-18rem">
-                    <Link href={`/products/${p.id}`}>{p.name}</Link>
-                  </td>
-                  <td className="w-10rem">${p.value}</td>
+                  <td>{p.id}</td>
+                  <td><Link href={`/products/${p.id}`}>{p.name}</Link></td>
+                  <td>${p.value}</td>
                 </tr>
               )) :
               <EmptyTableRow columns={3} />

@@ -21,7 +21,7 @@ export default function Search({ placeholder }) {
   }, 300);
 
   return (
-    <div className="mx-auto max-w-90 w-30rem">
+    <div className="mx-auto max-w-90 w-18rem">
       <input
         type="text"
         className="form-control"
