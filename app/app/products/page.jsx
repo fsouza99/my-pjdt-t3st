@@ -29,7 +29,7 @@ export default async function ProductsPage(props) {
       </div>
       <table className="table table-hover max-w-40rem mx-auto text-center">
         <caption className="text-center">
-          Lista de produtos: clique em um para gerir e ver materiais.
+          Lista de produtos: clique para editar ou ver mais.
         </caption>
         <thead>
           <tr>

@@ -7,8 +7,8 @@ import '@/app/globals.css';
 
 
 export const metadata = {
-  title: "Product & Materials MGM",
-  description: "Web application for management of products and raw materials."
+  title: "Produtos & Materiais",
+  description: "Aplicação web para gestão de produtos e matérias-primas."
 };
 
 

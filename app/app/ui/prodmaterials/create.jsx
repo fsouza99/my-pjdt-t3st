@@ -16,12 +16,12 @@ export default function CreateProdRawMaterialForm({ product, rawmats }) {
   return (
     <>
       <h1 className="text-center mb-4 fs-3">
-        Adicionar Matéria Prima ao Produto<span className="text-secondary"> ∙ {product.id}</span>
+        Adicionar Matéria-prima ao Produto<span className="text-secondary"> ∙ {product.id}</span>
       </h1>
       <form action={formAction} className="w-30rem max-w-90 mx-auto">
         <input name="pid" defaultValue={product.id} hidden />
 
-        <label htmlFor="materialInput">Matéria prima</label>
+        <label htmlFor="materialInput">Matéria-prima</label>
         <select id="materialInput" name="rid" className="form-select">
           {
             rawmats.map((r) => (

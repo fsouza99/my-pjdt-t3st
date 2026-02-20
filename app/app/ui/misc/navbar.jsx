@@ -26,6 +26,9 @@ export default function Navbar() {
             id="navbarNavAltMarkup">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item mx-1">
+                <Link className="nav-link" href="/about">Sobre</Link>
+              </li>
+              <li className="nav-item mx-1">
                 <Link className="nav-link" href="/products">Produtos</Link>
               </li>
               <li className="nav-item mx-1">

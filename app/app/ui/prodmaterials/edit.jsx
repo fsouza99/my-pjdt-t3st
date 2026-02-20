@@ -31,7 +31,7 @@ export default function EditProdRawMaterialForm({ product, rawmat }) {
   return (
     <>
       <h1 className="text-center mb-4 fs-3">
-        Modificar Matéria Prima em Produto
+        Modificar Matéria-prima em Produto
         <span className="text-secondary"> ∙ {product.id}</span>
       </h1>
       <form id="upForm" action={upFormAction} className="w-30rem max-w-90 mx-auto">

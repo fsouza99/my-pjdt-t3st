@@ -13,7 +13,7 @@ export default function CreateRawMaterialForm() {
 
   return (
     <>
-      <h1 className="text-center fs-3">Nova Matéria Prima</h1>
+      <h1 className="text-center fs-3">Nova Matéria-prima</h1>
       <form action={formAction} className="w-30rem max-w-90 mx-auto" >
         <RawMaterialInputs />
         <div className="text-center">

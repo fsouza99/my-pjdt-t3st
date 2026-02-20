@@ -15,12 +15,12 @@ export default async function ProdMaterialsPage({ params }) {
         <Link
           href={`/products/${pid}/materials/create`}
           className="btn btn-light">
-          ➕ Adicionar matéria prima
+          ➕ Adicionar matéria-prima
         </Link>
       </div>
       <table className="table table-hover max-w-30rem mx-auto text-center">
         <caption className="text-center">
-          Matérias primas utilizadas no produto.
+          Matérias-primas utilizadas no produto.
         </caption>
         <thead>
           <tr>

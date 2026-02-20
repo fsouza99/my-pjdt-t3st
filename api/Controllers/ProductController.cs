@@ -75,7 +75,7 @@ public class ProductController : ControllerBase
                 product.Value,
                 totalValue));
         }
-        return result.Take(10).OrderByDescending(r => r.totalValue).ToList();
+        return result.OrderByDescending(r => r.totalValue).ToList();
     }
 
     // GET: api/Product/5

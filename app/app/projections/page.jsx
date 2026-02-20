@@ -11,7 +11,7 @@ export default async function ProductionProjectionsPage() {
       <h1 className="text-center mb-4">Projeções</h1>
       <table className="table table-hover max-w-90 w-40rem mx-auto text-center">
         <caption className="text-center">
-          Top {projections.length} projeções de produção para estoque disponível de materiais.
+          Ranking de projeções de produção para estoque disponível de materiais.
         </caption>
         <thead>
           <tr>

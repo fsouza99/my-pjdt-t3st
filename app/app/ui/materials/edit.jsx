@@ -29,7 +29,7 @@ export default function EditRawMaterialForm({ rawmat }) {
   return (
     <>
       <h1 className="text-center my-4 fs-3">
-        Matéria Prima<span className="text-secondary"> ∙ {rawmat.id}</span>
+        Matéria-prima<span className="text-secondary"> ∙ {rawmat.id}</span>
       </h1>
       <form id="upForm" action={upFormAction} className="w-30rem max-w-90 mx-auto" >
         <RawMaterialInputs rawmat={rawmat} />

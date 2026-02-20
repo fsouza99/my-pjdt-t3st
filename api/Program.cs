@@ -7,11 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+bool useSqlite = args.Contains("--sqlite");
 bool useSwagger = args.Contains("--swagger");
 
 builder.Services.AddControllers();
 
-builder.Services.AddAppDbContext(builder.Configuration);
+builder.Services.AddAppDbContext(builder.Configuration, useSqlite);
 
 if (useSwagger)
 {

@@ -20,7 +20,7 @@ export default async function RawMaretialsPage(props) {
 
   return (
     <>
-      <h1 className="text-center mb-4">Matérias Primas</h1>
+      <h1 className="text-center mb-4">Matérias-primas</h1>
       <div className="d-flex w-fit mx-auto my-4">
         <Search placeholder="Procurar matéria" />
         <Link href="/materials/create" className="btn btn-light ms-2">
@@ -29,7 +29,7 @@ export default async function RawMaretialsPage(props) {
       </div>
       <table className="table table-hover max-w-40rem mx-auto text-center">
         <caption className="text-center">
-          Lista de materiais: clique em um para gerir e ver materiais.
+          Lista de materiais cadastrados: clique para editar.
         </caption>
         <thead>
           <tr>
